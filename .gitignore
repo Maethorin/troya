@@ -1,0 +1,5 @@
+.idea/
+troya.egg-info/
+media/
+build/
+.DS_store

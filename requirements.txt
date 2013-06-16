@@ -1,0 +1,4 @@
+tornado
+requests
+sh
+derpconf==0.4.7
