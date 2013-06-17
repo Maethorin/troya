@@ -1,0 +1,35 @@
+.fase-1 {
+    position: absolute;
+    top: 140px;
+    left: 345px;
+}
+
+.fase-2 {
+    position: absolute;
+    top: 280px;
+    left: 193px;
+}
+
+.fase-3 {
+    position: absolute;
+    top: 340px;
+    left: 372px;
+}
+
+.fase-4 {
+    position: absolute;
+    top: 499px;
+    left: 203px;
+}
+
+.fase-5 {
+    position: absolute;
+    top: 625px;
+    left: 558px;
+}
+
+.fase-6 {
+    position: absolute;
+    top: 361px;
+    left: 738px;
+}

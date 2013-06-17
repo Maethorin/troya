@@ -11,7 +11,8 @@ class HomeHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
     def get(self):
         kwargs = {
-            "mensagem": None
+            "mensagem": None,
+            "page": "home",
         }
         self.render('home.html', **kwargs)
 
@@ -33,6 +34,14 @@ class EnviandoEmailHandler(tornado.web.RequestHandler):
 
 
 class EnvioDeEmailHandler(tornado.web.RequestHandler):
+
+    @tornado.web.asynchronous
+    def get(self):
+        kwargs = {
+            "mensagem": None,
+            "page": "fase-1",
+        }
+        self.render('envia-email.html', **kwargs)
 
     @tornado.web.asynchronous
     def post(self):
@@ -64,5 +73,6 @@ class EnvioDeEmailHandler(tornado.web.RequestHandler):
         kwargs = {
             "mensagem": mensagem_retorno,
             "status": status,
+            "page": "fase-1",
         }
-        self.render('home.html', **kwargs)
+        self.render('envia-email.html', **kwargs)

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% end %}</title>
+    <link rel="stylesheet" href="{{ static_url('css/bootstrap.min.css') }}" type="text/css" />
+    {% block style %}{% end %}
+</head>
+<body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="/">Troya</a>
+        <ul class="nav">
+          <li {% if page == "home" %} class="active"{% end %}><a href="/">Início</a></li>
+          <li {% if page == "fase-1" %} class="active"{% end %}><a href="/fase-1">Fase 1</a></li>
+        </ul>
+      </div>
+    </div>
+    {% block contents %}{% end %}
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    {% block script %}{% end %}
+</body>
+</html>
