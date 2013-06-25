@@ -7,7 +7,8 @@ import logging
 import tornado.web
 import tornado.wsgi
 from tornado.web import url
-from handlers.home import HomeHandler, EnvioDeEmailHandler, EnviandoEmailHandler
+from handlers.home import HomeHandler
+from handlers.email import EnvioDeEmailHandler, EnviandoEmailHandler
 
 
 def configure_app(self, config=None, log_level='INFO', debug=False, static_path=None):
@@ -20,7 +21,7 @@ def configure_app(self, config=None, log_level='INFO', debug=False, static_path=
 
     handlers = [
         url(r'/', HomeHandler, name="home"),
-        url(r'/fase-1/?', EnvioDeEmailHandler, name="envia-email"),
+        url(r'/fase-email/?', EnvioDeEmailHandler, name="envia-email"),
         url(r'/envia-email/?', EnviandoEmailHandler, name="enviando-email"),
     ]
 

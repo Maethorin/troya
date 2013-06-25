@@ -5,21 +5,20 @@
 {% end %}
 {% block contents %}
     <img src="{{ static_url('img/ciclo-apt.png') }}" alt="Ciclo APT"/>
-    <a href="/fase-1" class="btn btn-warning btn-large fase fase-1">1</a>
-    <a href="#" class="btn btn-warning btn-large fase fase-2">2</a>
-    <a href="#" class="btn btn-warning btn-large fase fase-3">3</a>
-    <a href="#" class="btn btn-warning btn-large fase fase-4">4</a>
-    <a href="#" class="btn btn-warning btn-large fase fase-5">5</a>
-    <a href="#" class="btn btn-warning btn-large fase fase-6">6</a>
+    <a href="#" class="btn btn-warning btn-large fase fase-1">1</a>
+    <a href="/fase-email" class="btn btn-warning btn-large fase fase-2">2</a>
+    <a href="#" class="btn btn-warning btn-large fase fase-3 not">3</a>
+    <a href="#" class="btn btn-warning btn-large fase fase-4 not">4</a>
+    <a href="#" class="btn btn-warning btn-large fase fase-5 not">5</a>
+    <a href="#" class="btn btn-warning btn-large fase fase-6 not">6</a>
+
+    <div id="dialog-fase1" class="dialog-fase" title="Fase 1 - Coleta de Informações">
+    </div>
+
+    <div id="nao-implementado" title="Não implementado">
+        <p>Funcionalidade não implementada ainda</p>
+    </div>
 {% end %}
 {% block script %}
-    <script type="text/javascript">
-        $(".fase").click(function() {
-            var $this = $(this);
-            if (!$this.hasClass("fase-1")) {
-                alert("Não implementado ainda...")
-                return false;
-            }
-        });
-    </script>
+    <script src="{{ static_url('js/jquery-support.js') }}"></script>
 {% end %}
