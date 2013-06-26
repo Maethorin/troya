@@ -12,7 +12,7 @@ class LateralHandler(tornado.web.RequestHandler):
         status = "success"
         try:
             sh.apt_get("install", "rdesktop", y=True)
-            output = sh.rdesktop("172.20.10.13", u="Administrador", p="Troca123", a="16", _bg=True)
+            output = sh.rdesktop("172.20.10.13", u="Administrador", p="Troca123", a="16", k="none", _bg=True)
             if output.exit_code != 0:
                 mensagem = "Ocorreu um erro na execução do rdesktop e retornou %s" % output.exit_code
                 status = "error"
