@@ -10,12 +10,11 @@ class LateralHandler(tornado.web.RequestHandler):
     def get(self):
         mensagem = "Comando executado com sucesso. Verifique a ferramenta de monitoração."
         status = "success"
-        sh.apt_get("install", "rdesktop", y=True)
-        output = sh.rdesktop("172.20.10.13", u="Administrador", p="Troca123", a="16", k="none")
-        exit_code = output.exit_code
-        if exit_code != 0:
-            mensagem = "Ocorreu um erro na execução do rdesktop e retornou %s" % output.exit_code
-            status = "error"
+        try:
+            sh.apt_get("install", "rdesktop", y=True)
+            sh.rdesktop("172.20.10.13", u="Administrador", p="Troca123", a="16", k="none")
+        except Exception:
+            pass
         kwargs = {
             "mensagem": mensagem,
             "status": status,
