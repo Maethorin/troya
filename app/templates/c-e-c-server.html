@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Fase 1 - Enviar E-mail{% end %}
+{% block contents %}
+    <h2>Fase 3 - C&C Servidor</h2>
+    {% if mensagem %}
+    <div class="alert alert-{{ primeiro_status }} primeira">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{% if primeiro_status == "error" %}Erro{% else %}Sucesso{% end %}!</strong> {{ primeiro_get }}
+    </div>
+    <div class="alert alert-{{ segundo_status }} segunda">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>{% if segundo_status == "error" %}Erro{% else %}Sucesso{% end %}!</strong> {{ segundo_get }}
+    </div>
+    {% end %}
+{% end %}
