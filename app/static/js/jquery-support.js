@@ -1,6 +1,6 @@
 $(".dialog-fase").dialog({
     autoOpen: false,
-    height: 290,
+    height: 430,
     width: 540,
     resizable: false,
     modal: true,

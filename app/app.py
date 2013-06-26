@@ -10,6 +10,7 @@ from tornado.web import url
 from handlers.c_e_c_server import CeCServerHandler
 from handlers.home import HomeHandler
 from handlers.email import EnvioDeEmailHandler, EnviandoEmailHandler
+from handlers.lateral import LateralHandler
 
 
 def configure_app(self, config=None, log_level='INFO', debug=False, static_path=None):
@@ -26,6 +27,7 @@ def configure_app(self, config=None, log_level='INFO', debug=False, static_path=
         url(r'/envia-email/?', EnviandoEmailHandler, name="enviando-email"),
 
         url(r'/fase-c-e-c/?', CeCServerHandler, name="c-e-c-server"),
+        url(r'/fase-lateral/?', LateralHandler, name="lateral"),
     ]
 
     options = {
